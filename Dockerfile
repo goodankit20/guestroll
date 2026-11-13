@@ -53,7 +53,7 @@ COPY docker/fonts.conf /app/fonts.conf
 # The optional updater (docker-compose profile "updater") runs from this same image.
 COPY updater ./updater
 
-VOLUME ["/data"]
+# VOLUME removed: Railway rejects it; the /data volume is attached in Railway instead.
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
